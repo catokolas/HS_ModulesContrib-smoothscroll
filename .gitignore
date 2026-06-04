@@ -1,0 +1,9 @@
+# Compiled native modules
+*.so
+*.dSYM/
+
+# Release artifacts produced by `make dist`
+dist/
+
+# macOS
+.DS_Store
