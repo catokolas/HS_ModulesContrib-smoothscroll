@@ -126,7 +126,8 @@ To produce a release artifact (universal binary zip) yourself:
 
 ```bash
 cd smoothscroll
-make dist VERSION=0.1     # → dist/smoothscroll-0.1-macos-universal.zip
+VERSION=0.1
+make dist $VERSION     # → dist/smoothscroll-0.1-macos-universal.zip
 ```
 
 If you have access - publish the artifact as a GitHub Release with the
@@ -134,9 +135,9 @@ If you have access - publish the artifact as a GitHub Release with the
 
 ```bash
 # From the repo root (the parent of the `smoothscroll/` subdir):
-gh release create v0.1 \
-  smoothscroll/dist/smoothscroll-0.1-macos-universal.zip \
-  --title "v0.1" \
+gh release create v$VERSION \
+  dist/smoothscroll-$VERSION-macos-universal.zip \
+  --title "v$VERSION" \
   --notes "Initial release. Universal arm64 + x86_64 binary built against macOS 13.0+."
 ```
 
